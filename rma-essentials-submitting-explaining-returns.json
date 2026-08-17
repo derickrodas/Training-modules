@@ -1,0 +1,393 @@
+{
+  "id": "rma-processing-essentials",
+  "title": "RMA Essentials: Submitting & Explaining Returns",
+  "passScore": 80,
+  "theme": {
+    "accent": "#2563eb",
+    "logo": ""
+  },
+  "completion": {
+    "rule": "pass"
+  },
+  "report": {
+    "url": "https://script.google.com/macros/s/AKfycbytVPKReGTGu92Hf_tx_J38aM8FGedAlwcG8lCdEDmXnRNXyvCQT1uN8PlE5EUtnkkndw/exec",
+    "mode": "json",
+    "secret": "rently-courses-2026"
+  },
+  "slides": [
+    {
+      "type": "title",
+      "heading": "RMA Essentials",
+      "sub": "What an RMA is, when to submit one, and how to set the right expectations with clients"
+    },
+    {
+      "type": "content",
+      "heading": "What is an RMA?",
+      "body": [
+        "**RMA** stands for *Return Merchandise Authorization*. It's the process Rently uses to authorize the return of faulty hardware and get a replacement out to the client.",
+        "An RMA covers **hardware only**, and only hardware that was originally purchased through Rently.",
+        "A standard RMA ties together three records:",
+        "- The **technical support case** documenting the troubleshooting attempted\n- The **Return Record** authorizing the faulty device to come back\n- The **replacement Sales Order** shipping a device to the client"
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "What the warranty does and doesn't cover",
+      "body": [
+        "This distinction causes most client friction, so it's worth memorizing.",
+        "**Covered:** the hardware itself.",
+        "**Not covered:** anything that isn't hardware, including **shipping costs** and **installation fees**.",
+        "Two things to keep in mind when you talk to clients: the replacement order is still **priced against the client's current contract** (or list price if they have no contract), and any **credit for the returned device depends on testing** once it reaches our warehouse. So \"under warranty\" does not automatically mean \"no charges.\""
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "When can you RMA a device?",
+      "body": [
+        "Three prerequisites:",
+        "- **1. A technical support case exists** documenting troubleshooting efforts, and confirming the device is faulty.  \n*unless the client is on the exception list*\n- **2. The hardware was originally purchased through Rently**. We cannot RMA hardware bought elsewhere\n- **3. Only hardware is covered**, with no services such as shipping or installation fees",
+        "A missing tech support case is an explicit rejection reason, and the RMA will be sent back to Draft with a Chatter alert to you."
+      ]
+    },
+    {
+      "type": "branch",
+      "heading": "Scenario: is this eligible?",
+      "sub": "A client says a smart lock stopped responding. They mention they bought it themselves from an online retailer because it was cheaper. What do you do?",
+      "options": [
+        {
+          "text": "Create the RMA, since it's a device model we sell we should be able to fix or replace it.",
+          "correct": false,
+          "feedback": "Not eligible. RMAs can only be completed on hardware **originally purchased through Rently**, regardless of the model."
+        },
+        {
+          "text": "Explain that RMAs only cover hardware purchased through Rently, and discuss purchasing a replacement.",
+          "correct": true,
+          "feedback": "Correct. Purchase origin is a hard requirement. You can still help them troubleshoot; you just can't process a warranty replacement."
+        },
+        {
+          "text": "Submit the RMA anyway and let the Orders team decide.",
+          "correct": false,
+          "feedback": "This creates rework. Purchase origin is a prerequisite you're expected to check before creating the RMA. Passing it downstream just delays the client and consumes another team's time."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "What happens after you submit an RMA",
+      "body": [
+        "Your RMA request email is the start of a chain that touches several other teams. Knowing the chain helps you answer \"where is my replacement?\"",
+        "- **1. Orders Team**: finds the original order, creates the Return Record, adds the return line items.\n- **2.** The replacement **Sales Order** is generated and the hardware is priced against the client's current contract, then set to *Processing*\n- **3. RevOps**: audits the order in the *All Orders to be Activated* report and either moves it to *Activated* or sends it back to Draft\n- **4. Fulfillment / Warehouse**: verifies the order, then assigns and pairs the replacement devices on the client's behalf\n- **5.** Once the faulty device arrives, the **RMA Specialist / Inventory and Lockbox teams** test it and determines if its creditable, \n- **6.** **Finance** processes any credit in NetSuite"
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "Why RMAs get sent back",
+      "body": [
+        "RevOps returns orders to Draft and alerts the submitter via Chatter. The documented rejection reasons include:",
+        "- The RMA request has **no associated troubleshooting case**. *This exception doesn't apply to Client-Owned RMAs*\n- The **original order is missing** from the Return Record\n- The **unit price doesn't match**. Note the SOP describes this two ways: matching the client's **current contract price** in the audit steps, and matching the **original order's unit price** in the rejection list\n- The **shipping address is incorrectly formatted or missing**, and we do **not** ship to P.O. Boxes\n- The **shipping contact is missing a phone number**\n- The **shipping price is inaccurate or missing**\n- The item is **discontinued**, or **Quantity on Hand is insufficient**\n- **SaaS** appears on the Return Record\n- Missing **Account Name**, **Account to be Billed**, or **Account to Assign Devices**",
+        "On shipping: RevOps verifies the method is **2nd Day Air**. If it's Overnight, they confirm the rate with the fulfillment team."
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "What happens to the device you send back",
+      "body": [
+        "When the returned device reaches the warehouse it's tested for **basic functionality** (keypad buttons, key, physical defects), **connectivity** (pairing, responsiveness), **loose or opened parts**, and **whatever fault you described in the RMA**.",
+        "That test determines the refund type recorded in NetSuite:",
+        "- Device is **creditable** → *Full Refund*\n- Device is **non-creditable** → *No Refund*\n- A shipment with **some creditable and some non-creditable devices** → *Partial Refund*",
+        "If nothing is returned at all within the return window, the RMA is closed out with a refund type of *No Refund* or *No Product Received*.",
+        "This is why your fault description matters. It tells the warehouse what to look for."
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "Setting expectations with clients",
+      "body": [
+        "Five things to say up front, every time:",
+        "- **Troubleshooting comes first.** An RMA can't be created until we've documented that we tried to fix it.\n- **The warranty covers hardware only.** Shipping and installation costs are not covered.\n- **The faulty device needs to come back.** The *Account to be Billed* on the order is the account that foots the bill if the faulty item isn't returned to Rently within **30 days**.\n- **We can't ship to P.O. Boxes.** We need a full street address including apt/suite/unit, city, state, postal code and country, plus a working phone number on the shipping contact.\n- **Credit depends on testing.** Whether the client sees a full, partial, or no credit is decided after our warehouse tests the returned device."
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Practice: managing a client's expectations",
+      "character": {
+        "name": "Alex (Property Manager)",
+        "avatar": ""
+      },
+      "turns": [
+        {
+          "line": "One of our smart locks is dead. Can you just overnight me a new one? It's under warranty so this should all be free, right?",
+          "options": [
+            {
+              "text": "Happy to help. Before I can start a replacement I'll need to run through some troubleshooting with you and document it, since that's required to open the RMA. I should also flag that the warranty covers the hardware itself, but not shipping or installation.",
+              "best": true,
+              "feedback": "Ideal. You set both expectations (troubleshooting first, hardware-only warranty) while still sounding helpful."
+            },
+            {
+              "text": "Yes, all completely free. I'll get one shipped out overnight today.",
+              "best": false,
+              "feedback": "This sets up a broken promise on three fronts: shipping and installation aren't covered by the warranty, no RMA can be created before troubleshooting is documented, and orders are verified as 2nd Day Air unless the rate for Overnight is confirmed with fulfillment."
+            },
+            {
+              "text": "Warranties don't cover shipping, so there will be a charge.",
+              "best": false,
+              "feedback": "Accurate but cold, and it skips the troubleshooting requirement entirely. Lead with help, then set the expectation."
+            }
+          ]
+        },
+        {
+          "line": "Okay, we did the troubleshooting and it's definitely dead. What happens next on your end?",
+          "options": [
+            {
+              "text": "I'll document everything and submit the RMA. Our Orders team creates the return record and the replacement order, RevOps reviews it, then fulfillment pairs and ships your device. You'll get a return label for the faulty unit too.",
+              "best": true,
+              "feedback": "Good. A clear, honest picture of the chain without over-promising a specific date."
+            },
+            {
+              "text": "It ships today.",
+              "best": false,
+              "feedback": "You can't promise that. The order passes through Orders, a RevOps audit, and fulfillment before it ships."
+            },
+            {
+              "text": "It's out of my hands now, someone will get to it.",
+              "best": false,
+              "feedback": "Technically true but unhelpful. The client is left with no sense of the process or timeline."
+            }
+          ]
+        },
+        {
+          "line": "Do I actually have to bother shipping the broken one back? It's garbage anyway.",
+          "options": [
+            {
+              "text": "Yes, please do. A return label gets generated for it. If the faulty unit isn't returned to us within 30 days, the account can be billed for the replacement.",
+              "best": true,
+              "feedback": "Exactly right, and you gave them the concrete reason rather than just a rule."
+            },
+            {
+              "text": "Don't worry about it, most people don't send them back.",
+              "best": false,
+              "feedback": "This exposes the account to being billed for the replacement, and breaks the return and testing process the warehouse depends on."
+            },
+            {
+              "text": "It's company policy.",
+              "best": false,
+              "feedback": "A rule with no reason invites pushback. Explaining the 30-day billing consequence is far more persuasive."
+            }
+          ]
+        },
+        {
+          "line": "Got it. And will we be credited for the broken lock?",
+          "options": [
+            {
+              "text": "Once it arrives, our warehouse tests it and that determines the credit. It could be a full credit, partial, or none depending on its condition. I'll follow up as soon as I know.",
+              "best": true,
+              "feedback": "Well handled. You stayed honest about the uncertainty instead of guessing."
+            },
+            {
+              "text": "Yes, you'll get a full credit.",
+              "best": false,
+              "feedback": "You can't commit to that. Refund type is decided by the warehouse's diagnostic: full, partial, or none."
+            },
+            {
+              "text": "No, returns aren't credited.",
+              "best": false,
+              "feedback": "Also wrong. Creditable devices do receive a full refund; it depends on the test results."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "Types of RMAs",
+      "body": [
+        "- **Standard RMA**: a faulty device with a documented troubleshooting case.\n- **Multi-Device RMA**: normally *every* device must be documented in its **own** RMA. Only the exception clients below may have one RMA covering multiple devices.\n- **Client-Owned RMA**: the client asks for a device to be returned to them **at their own expense**. Created by the CSM from an existing RMA reference number.\n- **Blind Return**: a device arrives with no associated case or RMA record on file.",
+        "**Exception clients** who may combine devices into a single RMA: **Progress**, **Main Street Renewal**, and **Kairos**. For these, confirm the device is also logged in that client's RMA tracking spreadsheet."
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "Blind returns: what to expect",
+      "body": [
+        "If a device arrives unexpectedly, the RMA Specialist or Inventory team searches NetSuite for an associated RMA. If there's no record, it's treated as a **blind return** and its serial number goes on the Blind Return spreadsheet. A return record is then built from the original order number. Once created in NetSuite it syncs to Salesforce within about 24 hours.",
+        "The RMA Specialist messages the **CSM via Chatter** with the diagnostic findings and the refund outcome. The CSM then contacts the client.",
+        "If there was **no tech case** and the device tests as **functional**, the client chooses: have it returned **at their expense** (which becomes a Client-Owned RMA), or have it disposed of with no replacement.",
+        "**If the client doesn't respond within 7 days, the device is disposed of without replacement.**"
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "heading": "Sort the situations",
+      "prompt": "Drag each situation into the right category.",
+      "zones": [
+        "Standard RMA",
+        "Client-Owned RMA",
+        "Blind Return",
+        "No Product Received"
+      ],
+      "items": [
+        {
+          "text": "Faulty lock with a documented tech case",
+          "zone": 0
+        },
+        {
+          "text": "Device arrives with no case or RMA record on file",
+          "zone": 2
+        },
+        {
+          "text": "No tech case, tested functional; client pays to get it back",
+          "zone": 1
+        },
+        {
+          "text": "Client never sent the faulty device back",
+          "zone": 3
+        }
+      ],
+      "feedback": "Not quite. Remember: nothing on file = Blind Return; client pays to have it returned = Client-Owned; nothing came back at all = closed as No Product Received."
+    },
+    {
+      "type": "content",
+      "heading": "How to submit an RMA: your steps",
+      "body": [
+        "Your part is **documentation**. Do it thoroughly and the rest of the chain moves without friction.",
+        "- **1.** Attempt all necessary troubleshooting steps for the device\n- **2.** Notate the steps attempted and their effectiveness in the case details\n- **3.** Once confirmed faulty, capture the device details (next slide)\n- **4.** Email orders@rently.com using the template",
+        "A RMA request with no associated troubleshooting will not be processed."
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "The details you must capture",
+      "body": [
+        "Record all four",
+        "- **Device Serial Number(s)**\n- **Brief Issue Description**\n- **Tech Support Case #**\n- **Photos/Videos (optional but helpful)**\n- **Shipping address**, We cannot ship to P.O. boxes\nAlso include your **troubleshooting steps and results** and a clear description of the fault. The warehouse uses your fault description to know what to test for."
+      ]
+    },
+    {
+      "type": "quiz",
+      "heading": "Knowledge check",
+      "questions": [
+        {
+          "qtype": "multi",
+          "q": "Which of these are required before an RMA can be created? (select all that apply)",
+          "options": [
+            "A technical support case documenting troubleshooting efforts",
+            "The hardware was originally purchased through Rently",
+            "The client has been with Rently for at least one year",
+            "The device has been confirmed faulty"
+          ],
+          "answers": [
+            0,
+            1,
+            3
+          ],
+          "feedback": "Tenure is irrelevant. You need a documented troubleshooting case (unless the client is on the exception list), hardware originally purchased through Rently, and the device confirmed faulty before you capture its details."
+        },
+        {
+          "qtype": "truefalse",
+          "q": "The warranty covers the hardware as well as the cost of shipping it.",
+          "answer": false,
+          "feedback": "False. Only hardware is covered. Additional services such as shipping costs and installation fees are not."
+        },
+        {
+          "qtype": "single",
+          "q": "A client bought a lock from a third-party retailer and it's faulty. What can you do?",
+          "options": [
+            "Process a standard RMA",
+            "Process a Client-Owned RMA instead",
+            "Explain that RMAs only cover hardware purchased through Rently"
+          ],
+          "answer": 2,
+          "feedback": "RMAs can only be completed on hardware originally purchased through Rently."
+        },
+        {
+          "qtype": "numeric",
+          "q": "The 'Account to be Billed' foots the bill if the faulty item isn't returned to Rently within how many days?",
+          "answer": 30,
+          "tolerance": 0,
+          "feedback": "30 days. That's how the SOP defines the Account to be Billed: the account paying if the faulty item doesn't come back within 30 days."
+        },
+        {
+          "qtype": "numeric",
+          "q": "On a blind return, how many days does a client have to respond before the device is disposed of without replacement?",
+          "answer": 7,
+          "tolerance": 0,
+          "feedback": "7 days. If no response is received within 7 days, the device is disposed of without replacement."
+        },
+        {
+          "qtype": "multi",
+          "q": "Which clients may combine multiple devices into a single RMA? (select all that apply)",
+          "options": [
+            "Progress",
+            "Main Street Renewal",
+            "Kairos",
+            "All enterprise clients"
+          ],
+          "answers": [
+            0,
+            1,
+            2
+          ],
+          "feedback": "Only Progress, Main Street Renewal, and Kairos. Every other client needs a separate RMA per device."
+        },
+        {
+          "qtype": "order",
+          "q": "Put your documentation steps in the correct order.",
+          "items": [
+            "Attempt troubleshooting on the device",
+            "Note the steps tried and their results in the case",
+            "Capture serial number, model, quantity, order number, warranty status",
+            "Submit the RMA Request via email to orders@rently.com"
+          ],
+          "feedback": "Troubleshoot, document what you tried, capture the device details, then create the child case."
+        },
+        {
+          "qtype": "match",
+          "q": "Match each situation to the refund type recorded in NetSuite.",
+          "pairs": [
+            {
+              "left": "Returned device tests as creditable",
+              "right": "Full Refund"
+            },
+            {
+              "left": "Returned device tests as non-creditable",
+              "right": "No Refund"
+            },
+            {
+              "left": "Shipment has creditable and non-creditable devices",
+              "right": "Partial Refund"
+            },
+            {
+              "left": "Client never returned anything",
+              "right": "No Product Received"
+            }
+          ],
+          "feedback": "The warehouse diagnostic sets the refund type. A mixed shipment gets a Partial Refund (with a separate item receipt for the non-creditable devices), and an RMA where nothing came back is closed as No Refund or No Product Received."
+        },
+        {
+          "qtype": "single",
+          "q": "Which of these would cause RevOps to send an RMA back to Draft?",
+          "options": [
+            "The client has more than one property",
+            "The Return Record has no associated troubleshooting case",
+            "The device is more than a year old"
+          ],
+          "answer": 1,
+          "feedback": "A missing troubleshooting case is a rejection reason (except on Client-Owned RMAs). Others include a missing original order, mismatched unit price, bad shipping address, or no phone number on the contact."
+        },
+        {
+          "qtype": "truefalse",
+          "q": "You should tell a client their credit is guaranteed once they ship the faulty device back.",
+          "answer": false,
+          "feedback": "False. Credit depends on the warehouse's diagnostic. It may be full, partial, or none."
+        }
+      ]
+    },
+    {
+      "type": "result"
+    }
+  ],
+  "certificate": {
+    "issuer": "Rently Learning",
+    "enabled": true
+  }
+}
