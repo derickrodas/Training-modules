@@ -209,10 +209,8 @@
       "type": "content",
       "heading": "Blind returns: what to expect",
       "body": [
-        "If a device arrives unexpectedly, the RMA Specialist or Inventory team searches NetSuite for an associated RMA. If there's no record, it's treated as a **blind return** and its serial number goes on the Blind Return spreadsheet. A return record is then built from the original order number. Once created in NetSuite it syncs to Salesforce within about 24 hours.",
-        "The RMA Specialist messages the **CSM via Chatter** with the diagnostic findings and the refund outcome. The CSM then contacts the client.",
-        "If there was **no tech case** and the device tests as **functional**, the client chooses: have it returned **at their expense** (which becomes a Client-Owned RMA), or have it disposed of with no replacement.",
-        "**If the client doesn't respond within 7 days, the device is disposed of without replacement.**"
+        "Any device that arrives at Rently without its RMA return label is processed as a blind return. Without the label we cannot match the device to a case, an order, or a client.",
+        "-No credit. Blind returns are not eligible for credit.\n-The device is discarded, per Rently policy.\n-The CSM is notified."
       ]
     },
     {
@@ -250,7 +248,7 @@
       "heading": "How to submit an RMA: your steps",
       "body": [
         "Your part is **documentation**. Do it thoroughly and the rest of the chain moves without friction.",
-        "- **1.** Attempt all necessary troubleshooting steps for the device\n- **2.** Notate the steps attempted and their effectiveness in the case details\n- **3.** Once confirmed faulty, capture the device details (next slide)\n- **4.** Email orders@rently.com using the template",
+        "- **1.** Attempt all necessary troubleshooting steps for the device with Tech support\n- **2.** Notate the steps attempted and their effectiveness in the case details\n- **3.** Once confirmed faulty, capture the device details (next slide)\n- **4.** Email orders@rently.com using the template",
         "A RMA request with no associated troubleshooting will not be processed."
       ]
     },
@@ -305,13 +303,6 @@
           "answer": 30,
           "tolerance": 0,
           "feedback": "30 days. That's how the SOP defines the Account to be Billed: the account paying if the faulty item doesn't come back within 30 days."
-        },
-        {
-          "qtype": "numeric",
-          "q": "On a blind return, how many days does a client have to respond before the device is disposed of without replacement?",
-          "answer": 7,
-          "tolerance": 0,
-          "feedback": "7 days. If no response is received within 7 days, the device is disposed of without replacement."
         },
         {
           "qtype": "multi",
